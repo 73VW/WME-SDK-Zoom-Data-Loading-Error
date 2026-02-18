@@ -111,6 +111,9 @@ function initScript() {
             .sdkdbg-event-wme-map-zoom-changed {
                 color: #2c3e50;
             }
+            .sdkdbg-event-wme-map-initial-data-loaded {
+                color: #29b97b;
+            }
             .sdkdbg-loading-true {
                 color: #27ae60;
                 font-weight: 600;
@@ -333,6 +336,12 @@ function initScript() {
             eventName: "wme-ready",
             eventHandler: () => {
                 appendLog(ch1Logs, { eventName: "wme-ready" });
+            },
+        });
+        wmeSDK.Events.on({
+            eventName: "wme-map-initial-data-loaded",
+            eventHandler: () => {
+                appendLog(ch1Logs, { eventName: "wme-map-initial-data-loaded" });
             },
         });
 
